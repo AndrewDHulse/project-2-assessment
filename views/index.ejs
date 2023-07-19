@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Unit 2 assessment</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Grocery List</h1>
+    <%if (list.length === 0){%>
+      <p>There are no groceries yet!</p>
+    <%} else {%>
+      <ul>
+        <%list.forEach(function(l){%>
+          <li><%= l.item %> - <%= l.needed ? "still need" : "got it!"%></li>
+        </ul>
+        <%})}%>
+        <hr>
+        <form action="/" method="POST" style="display:inline">
+          <input type="text" name="item" placeholder="What are you buying?">
+
+          <button type="submit">ADD Grocery</button>
+
+        </form>
+  </body>
+</html>
